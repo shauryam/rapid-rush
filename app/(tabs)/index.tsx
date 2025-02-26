@@ -1,17 +1,22 @@
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import {
+  Pressable,
+  StyleSheet,
+  Text,
+  TextStyle,
+  View,
+  ViewStyle,
+} from "react-native";
+import { FC } from "react";
+import { Link } from "expo-router";
 
-export default function Index() {
-  return (
-    <View style={styles.gameTitleContainer}>
-      <Text style={styles.gameTitleText}>Rapid Rush</Text>
-      <Pressable style={styles.playButton}>
-        <Text style={styles.playButtonText}>Play</Text>
-      </Pressable>
-    </View>
-  );
+interface Styles {
+  gameTitleContainer: ViewStyle;
+  gameTitleText: TextStyle;
+  playButton: ViewStyle;
+  playButtonText: TextStyle;
 }
 
-const styles = StyleSheet.create({
+const styles: Styles = StyleSheet.create({
   gameTitleContainer: {
     flex: 1,
     gap: 15,
@@ -33,3 +38,18 @@ const styles = StyleSheet.create({
     color: "white",
   },
 });
+
+const Index: FC = () => {
+  return (
+    <View style={styles.gameTitleContainer}>
+      <Text style={styles.gameTitleText}>Rapid Rush</Text>
+      <Link asChild href="/gameplay">
+        <Pressable style={styles.playButton}>
+          <Text style={styles.playButtonText}>Play</Text>
+        </Pressable>
+      </Link>
+    </View>
+  );
+};
+
+export default Index;

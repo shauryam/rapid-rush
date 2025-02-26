@@ -21,7 +21,6 @@ export default function TabLayout() {
         name="settings"
         options={{
           title: "Settings",
-          headerShown: false,
           tabBarIcon: () => <Ionicons name="settings-outline" />,
         }}
       />
@@ -29,7 +28,6 @@ export default function TabLayout() {
         name="instructions"
         options={{
           title: "Game Instructions",
-          headerShown: false,
           tabBarIcon: () => <MaterialIcons name="format-list-bulleted" />,
         }}
       />

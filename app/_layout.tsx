@@ -8,7 +8,13 @@ export default function Layout() {
         options={{
           headerShown: false,
         }}
-      ></Stack.Screen>
+      />
+      <Stack.Screen
+        name="gameplay"
+        options={{
+          headerShown: false,
+        }}
+      />
     </Stack>
   );
 }
