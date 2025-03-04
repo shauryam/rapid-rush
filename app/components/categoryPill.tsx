@@ -38,7 +38,10 @@ const CategoryPill: React.FC<CategoryPillProps> = ({
         onPress={onPress}
       >
         <Text style={[selected ? styles.selectedText : styles.unselectedText]}>
-          {category}
+          {category
+            .split(" ")
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(" ")}
         </Text>
       </Pressable>
     </View>
