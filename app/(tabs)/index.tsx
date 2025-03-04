@@ -7,7 +7,9 @@ import {
   ViewStyle,
 } from "react-native";
 import { FC } from "react";
-import { Link } from "expo-router";
+import { useNavigation } from "@react-navigation/native";
+import PrimaryButton from "../components/primaryButton";
+import { useRouter } from "expo-router";
 
 interface Styles {
   gameTitleContainer: ViewStyle;
@@ -40,14 +42,16 @@ const styles: Styles = StyleSheet.create({
 });
 
 const Index: FC = () => {
+  const router = useRouter();
+
+  const handlePress = () => {
+    router.push("/gameplay");
+  };
+
   return (
     <View style={styles.gameTitleContainer}>
       <Text style={styles.gameTitleText}>Rapid Rush</Text>
-      <Link asChild href="/gameplay">
-        <Pressable style={styles.playButton}>
-          <Text style={styles.playButtonText}>Play</Text>
-        </Pressable>
-      </Link>
+      <PrimaryButton text="Play" onPress={handlePress} />
     </View>
   );
 };
