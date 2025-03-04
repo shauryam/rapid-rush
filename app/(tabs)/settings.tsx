@@ -3,12 +3,12 @@ import React, { useState } from "react";
 import CategoryPill from "../components/categoryPill";
 import { getAllCategories } from "@/services/dataService";
 
-const Settings: React.FC = () => {
-  interface CategorySelection {
-    name: string;
-    selected: boolean;
-  }
+interface CategorySelection {
+  name: string;
+  selected: boolean;
+}
 
+const Settings: React.FC = () => {
   const allCategories: CategorySelection[] = getAllCategories().map(
     ({ name }) => ({
       name,
@@ -31,6 +31,7 @@ const Settings: React.FC = () => {
 
   return (
     <View style={styles.outerContainer}>
+      <Text style={styles.headingText}>Game Length</Text>
       <View style={styles.container}>
         {categories.map((category, index) => (
           <CategoryPill
@@ -48,14 +49,15 @@ const Settings: React.FC = () => {
 const styles = StyleSheet.create({
   outerContainer: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
   },
   container: {
     flexDirection: "row",
     gap: 10,
     flexWrap: "wrap",
     justifyContent: "center",
+  },
+  headingText: {
+    fontWeight: "bold",
   },
 });
 
