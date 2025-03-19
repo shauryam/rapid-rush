@@ -1,6 +1,5 @@
 interface WordsData {
   id: number;
-
   word: string;
   categories: string[];
 }

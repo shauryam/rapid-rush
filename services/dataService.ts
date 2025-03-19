@@ -4,8 +4,11 @@ interface Categories {
   name: string;
 }
 
-export const getWord = (): string => {
-  return words[Math.floor(Math.random() * words.length)].word;
+export const getWord = (eligibleIds: number[]): string => {
+  const randomlySelectedId =
+    eligibleIds[Math.floor(Math.random() * eligibleIds.length)];
+  //TODO: Bad implementation: Fix this
+  return words.find(({ id }) => id === randomlySelectedId).word;
 };
 
 export const getAllCategories = (): Categories[] => {
