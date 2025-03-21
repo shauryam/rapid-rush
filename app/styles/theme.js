@@ -8,23 +8,22 @@ export const whiteAndPurple = {
     primaryButtonBackground: sharedColors.purple,
     primaryButtonText: '#FFFFFF',
     appBackground: '#FFFFFF',
-
     secondaryButtonBackground: '#FFFFFF',
     secondaryButtonText: sharedColors.purple,
     secondaryButtonBorderColor: sharedColors.purple
-    // other colors...
   },
   // typography, spacing, etc.
 };
 
-export const dark= {
-  id: 'dark',
+export const darkWithPurple= {
+  id: 'darkWithPurple',
   colors: {
-    primary: '#90CAF9',
-    secondary: '#FFD54F',
-    background: '#121212',
-    text: '#FFFFFF',
-    // other colors...
+    primaryButtonBackground: sharedColors.purple,
+    primaryButtonText: '#FFFFFF',
+    appBackground: '#333232',
+    secondaryButtonBackground: '#FFFFFF',
+    secondaryButtonText: '#FFFFFF',
+    secondaryButtonBorderColor: sharedColors.purple
   },
   // typography, spacing, etc.
 };
@@ -33,7 +32,7 @@ export const dark= {
 // Export all themes in a single object for easy access
 const themes = {
     whiteAndPurple,
-    dark
+    darkWithPurple
 };
 
 export default themes;

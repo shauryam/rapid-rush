@@ -5,7 +5,6 @@ import { createContext, useContext, useState } from 'react';
 import themes  from '@/app/styles/theme';
 
 const ThemeContext = createContext({
-  theme: themes.whiteAndPurple,
   setTheme: () => {}
 });
 

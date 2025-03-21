@@ -51,7 +51,7 @@ const Index: React.FC = () => {
           />
           <SecondaryButton
             onPress={() => router.push('/settings')}
-            title="Settings"
+            title="Game Settings"
           />
           <SecondaryButton
             onPress={() => router.push('/instructions')}
