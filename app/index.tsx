@@ -3,46 +3,62 @@ import { useRouter } from "expo-router";
 import { Box } from "@/components/ui/box";
 import { Text } from "@/components/ui/text";
 import { VStack } from "@/components/ui/vstack";
-import { Button, ButtonText } from "@/components/ui/button";
 import { Center } from "@/components/ui/center";
-import { StyleSheet } from "react-native";
+import { StyleSheet, Image, Button, Pressable } from "react-native";
+import {useTheme}  from "@/context/themeContext";
+import PrimaryButton from '@/components/primaryButton';
+import SecondaryButton from '@/components/secondaryButton';
 
 const Index: React.FC = () => {
   const router = useRouter();
+  const { theme } = useTheme();
+
+  const styles = StyleSheet.create({
+    appContainer: {
+      backgroundColor: theme.colors.appBackground,
+      justifyContent: "center",
+      alignItems: "stretch",
+      flex: 1,
+      paddingHorizontal: 50
+    },
+    titleImage: {
+      height: 200, // Set a fixed height
+      width: "100%", // Set width to 100%
+      resizeMode: "contain", // Ensure the image fits within its container
+    },
+    contentContainer: {
+      alignItems: "stretch",
+      justifyContent: "center"
+    },
+    buttonsContainer: {
+      paddingHorizontal: 30,
+      alignItems: "stretch"
+    },
+  });
 
   return (
-    <Box className="bg-purple-500 flex-1 justify-center items-center">
-      <Center>
-        <VStack className="gap-5">
-          <Text className="text-white/85 text-5xl font-bold">Rapid Rush</Text>
-          <VStack className="gap-3">
-            <Button
-              className="bg-yellow-500 rounded-full"
-              onPress={() => router.push("/gameplay")}
-            >
-              <ButtonText className="font-medium text-lg font-semibold text-center">
-                Play
-              </ButtonText>
-            </Button>
-            <Button
-              variant="outline"
-              className="rounded-full border-2 border-white/70"
-            >
-              <ButtonText className="font-medium text-lg font-semibold text-center text-white/70">
-                Settings
-              </ButtonText>
-            </Button>
-            <Button
-              variant="outline"
-              className="rounded-full border-2 border-white/70"
-            >
-              <ButtonText className="font-medium text-lg font-semibold text-center text-white/70">
-                Instructions
-              </ButtonText>
-            </Button>
-          </VStack>
+    <Box style={styles.appContainer}>
+      <VStack className="gap-6" style={styles.contentContainer}>
+        <Image
+          source={require("../assets/images/rapid-rush.png")}
+          alt="Rapid Rush Logo"
+          style={styles.titleImage}
+        />
+        <VStack className="gap-4" style={styles.buttonsContainer}>
+          <PrimaryButton
+            onPress={() => router.push('/gameplay')}
+            title="PLAY"
+          />
+          <SecondaryButton
+            onPress={() => router.push('/settings')}
+            title="Settings"
+          />
+          <SecondaryButton
+            onPress={() => router.push('/instructions')}
+            title="Instructions"
+          />
         </VStack>
-      </Center>
+      </VStack>
     </Box>
   );
 };

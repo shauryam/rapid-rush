@@ -3,7 +3,7 @@ import React, { useContext, useState, useRef } from "react";
 import { StyleSheet, Text, View, ViewStyle, TextStyle } from "react-native";
 import PrimaryButton from "./components/primaryButton";
 import gameSetup from "./helpers/gameSetup";
-import { GameSettingsContext } from "./context/gameSettingsContext";
+import { GameSettingsContext } from "@/context/gameSettingsContext";
 import { router } from "expo-router";
 
 interface Styles {

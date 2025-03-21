@@ -1,7 +1,7 @@
 // TODO: convert to Typescript
 
 import React, { createContext, useState } from "react";
-import { getAllCategories } from "../../services/dataService";
+import { getAllCategories } from "@/services/dataService";
 
 const GameSettingsContext = createContext({
   //TODO: change to number somehow

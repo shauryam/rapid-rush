@@ -1,5 +1,4 @@
 import { Text } from "@/components/ui/text";
-
 import { StyleSheet, TextInput, View } from "react-native";
 import React, { useContext } from "react";
 import CategoryPill from "../components/categoryPill";
@@ -7,7 +6,7 @@ import { VStack } from "@/components/ui/vstack";
 import { HStack } from "@/components/ui/hstack";
 import { Divider } from "@/components/ui/divider";
 import { Switch } from "@/components/ui/switch";
-import { GameSettingsContext } from "../context/gameSettingsContext";
+import { GameSettingsContext } from "@/context/gameSettingsContext";
 
 //TODO: move interface
 interface CategorySelection {
