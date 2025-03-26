@@ -67,7 +67,7 @@ const Index: React.FC = () => {
       <SettingsBottomSheet 
         ref={bottomSheetRef}
         snapPoints={['90%']}>
-      </SettingsBottomSheet>
+        </SettingsBottomSheet>
     </Box>
   );
 };

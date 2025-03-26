@@ -1,5 +1,5 @@
 export const sharedColors = {
-  purple: '#8157DA',
+  purple: 'rgb(129, 87, 218)',
   secondary: '#FFC107',
   backgroundLight: '#FFFFFF',
   backgroundDark: '#121212',

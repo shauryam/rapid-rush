@@ -6,6 +6,7 @@ export const whiteAndPurple = {
   id: 'lightWithPurple',
   colors: {
     primaryButtonBackground: sharedColors.purple,
+    primaryColor: sharedColors.purple,
     primaryButtonText: '#FFFFFF',
     appBackground: '#FFFFFF',
     secondaryButtonBackground: '#FFFFFF',
