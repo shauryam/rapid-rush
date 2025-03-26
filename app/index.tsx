@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useRouter } from "expo-router";
 import { Box } from "@/components/ui/box";
 import { Text } from "@/components/ui/text";
@@ -8,10 +8,15 @@ import { StyleSheet, Image, Button, Pressable } from "react-native";
 import {useTheme}  from "@/context/themeContext";
 import PrimaryButton from '@/components/primaryButton';
 import SecondaryButton from '@/components/secondaryButton';
+import BottomSheet, { BottomSheetBackdrop, BottomSheetView, useBottomSheet } from "@gorhom/bottom-sheet";
+import SettingsBottomSheet from "./components/SettingsBottomSheet";
 
 const Index: React.FC = () => {
   const router = useRouter();
   const { theme } = useTheme();
+
+  const bottomSheetRef = useRef<BottomSheet>(null);
+
 
   const styles = StyleSheet.create({
     appContainer: {
@@ -50,7 +55,7 @@ const Index: React.FC = () => {
             title="PLAY"
           />
           <SecondaryButton
-            onPress={() => router.push('/settings')}
+            onPress={() => bottomSheetRef.current?.snapToIndex(1)}
             title="Game Settings"
           />
           <SecondaryButton
@@ -59,6 +64,10 @@ const Index: React.FC = () => {
           />
         </VStack>
       </VStack>
+      <SettingsBottomSheet 
+        ref={bottomSheetRef}
+        snapPoints={['90%']}>
+      </SettingsBottomSheet>
     </Box>
   );
 };
